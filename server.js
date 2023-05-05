@@ -73,7 +73,10 @@ const req_handler = async incoming_req => {
                // send upstate msg on 
                // to all other sockets
                sockets.forEach (s => {
-                  s.send (JSON.stringify (msg))
+                  if (s.readyState == 1) {
+                     s.send (JSON.stringify (msg))
+                  }
+                  // else check_sockets ()
                })
             },
 
