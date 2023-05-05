@@ -146,7 +146,7 @@ amp.connect (rev_gate)
 
 const notes = {
    root: 69,
-   chord: shuffle_array ([ 0, 12, 24, 36, 38, 48 ]),
+   chord: [ 0, 12, 24, 36, 38, 48 ],
    i: Math.floor (Math.random () * 5),
    next: () => {
       notes.i += 1
@@ -154,6 +154,8 @@ const notes = {
       return notes.chord[notes.i] + notes.root
    }
 }
+
+shuffle_array (notes.chord)
 
 function next_note () {
    const now = audio_context.currentTime
