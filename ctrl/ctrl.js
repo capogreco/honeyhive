@@ -1,5 +1,16 @@
 // ~ WEBSOCKET THINGS ~
 let id = null
+let all_clear = true
+
+function give_all_clear () {
+   all_clear = true
+}
+
+function wait_for_clear () {
+   all_clear = false
+   setTimeout (give_all_clear, 200)
+}
+
 
 const ws_address = `wss://honeyhive.science.family`
 // const ws_address = `ws://localhost/`
@@ -99,14 +110,17 @@ document.body.onpointermove = e => {
       background ()
       draw_square (e)
 
-      socket.send (JSON.stringify ({
-         method: `upstate`,
-         content: {
-            x: e.x / cnv.width,
-            y: e.y / cnv.height,
-            is_playing: true,
-         }
-      }))   
+      if (all_clear) {
+         socket.send (JSON.stringify ({
+            method: `upstate`,
+            content: {
+               x: e.x / cnv.width,
+               y: e.y / cnv.height,
+               is_playing: true,
+            }
+         }))
+         wait_for_clear ()
+      }
    }
 }
 
