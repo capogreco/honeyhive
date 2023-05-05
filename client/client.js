@@ -55,6 +55,13 @@ function rand_integer (max) {
    return Math.floor (Math.random () * max)
 }
 
+function shuffle_array (a) {
+   for (let i = a.length - 1; i > 0; i--) {
+      let j = Math.floor (Math.random () * (i + 1))
+      [ a[i], a[j] ] = [ a[j], a[i] ]
+   }
+}
+
 socket.addEventListener ('open', msg => {
    console.log (`websocket is ${ msg.type } at ${ msg.target.url } `)
 })
@@ -139,7 +146,7 @@ amp.connect (rev_gate)
 
 const notes = {
    root: 69,
-   chord: [ 0, 12, 24, 36, 48 ],
+   chord: shuffle_array ([ 0, 12, 24, 36, 38, 48 ]),
    i: Math.floor (Math.random () * 5),
    next: () => {
       notes.i += 1
