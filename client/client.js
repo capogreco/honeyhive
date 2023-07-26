@@ -145,8 +145,8 @@ osc.connect (filter)
 amp.connect (rev_gate)
 
 const notes = {
-   root: 69,
-   chord: [ 0, 12, 24, 36, 38, 48 ],
+   root: 77,
+   chord: [ 0, 5, 7],
    i: Math.floor (Math.random () * 5),
    next: () => {
       notes.i += 1
