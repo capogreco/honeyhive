@@ -125,8 +125,8 @@ const move_handler = e => {
    }
 }
 
-document.body.onpointermove = move_handler
-// document.body.ontouchmove = move_handler
+// document.body.onpointermove = move_handler
+document.body.ontouchmove = move_handler
 
 
 document.body.onpointerup = e => {
