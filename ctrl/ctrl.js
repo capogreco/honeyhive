@@ -105,7 +105,7 @@ document.body.onpointerdown = e => {
    
 }
 
-document.body.onpointermove = e => {
+const move_handler = e => {
    if (pointer_down) {
       background ()
       draw_square (e)
@@ -123,6 +123,10 @@ document.body.onpointermove = e => {
       }
    }
 }
+
+document.body.onpointermove = move_handler
+document.body.ontouchmove = move_handler
+
 
 document.body.onpointerup = e => {
    pointer_down = false
