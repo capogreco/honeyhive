@@ -73,7 +73,7 @@ document.body.style.overflow = `hidden`
 
 document.body.style.backgroundColor = `black`
 const text_div                = document.createElement (`div`)
-text_div.innerText            = `tap to join`
+text_div.innerText            = `welcome to the merri creek tavern performance!  tap to join`
 text_div.style.font           = `italic bolder 80px sans-serif`
 text_div.style.color          = `white`
 text_div.style.display        = `flex`
