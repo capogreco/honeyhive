@@ -175,7 +175,7 @@ function next_note () {
    vib.frequency.setValueAtTime (vib.frequency.value, now)
    vib.frequency.exponentialRampToValueAtTime (vib_rate, now)
 
-   const wid = osc.frequency.value * (1 - state.y) * 0.1
+   const wid = osc.frequency.value * (1 - state.y) * 0.01
    vib_wid.gain.linearRampToValueAtTime (wid, now)
 
    rev_gate.gain.cancelScheduledValues (now)
