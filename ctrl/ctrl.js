@@ -106,17 +106,23 @@ document.body.onpointerdown = e => {
    
 }
 
-const move_handler = e => {
+document.body.onpointermove = e => {
    if (pointer_down) {
       background ()
-      draw_square (e)
+
+      const pos = {
+         x: e.x ? e.x : e.touches[0].clientX,
+         y: e.y ? e.y : e.touches[0].clientY
+      }
+
+      draw_square (pos)
 
       if (all_clear) {
          socket.send (JSON.stringify ({
             method: `upstate`,
             content: {
-               x: e.x / cnv.width,
-               y: e.y / cnv.height,
+               x: pos.x / cnv.width,
+               y: pos.y / cnv.height,
                is_playing: true,
             }
          }))
@@ -125,8 +131,10 @@ const move_handler = e => {
    }
 }
 
-// document.body.onpointermove = move_handler
-document.body.ontouchmove = move_handler
+
+// document.body.ontouchmove = e => {
+
+// }
 
 
 document.body.onpointerup = e => {
