@@ -54,7 +54,9 @@ socket.onopen = m => {
 
 document.body.style.margin   = 0
 document.body.style.overflow = `hidden`
-document.body.style.overscrollBehavior = `contain`
+document.body.style.touchAction = `none`
+document.body.style.overscrollBehavior = `none`
+
 // document.body.style.backgroundColor = `indigo`
 
 const socket_list            = document.createElement (`div`)
