@@ -144,15 +144,15 @@ osc.connect (filter)
 
 amp.connect (rev_gate)
 
-const notes = {
-   root: 77,
-   chord: [ 0, 5, 7, 19 ],
-   i: Math.floor (Math.random () * 4),
-   next: () => {
-      this.i += 1
-      this.i %= this.chord.length
-      return this.chord[this.i] + this.root
-   }
+
+
+const root = 77
+const chord = [ 0, 5, 7, 19 ]
+const i = Math.floor (Math.random () * 4)
+const next = () => {
+   i += 1
+   i %= chord.length
+   return chord[i] + root
 }
 
 shuffle_array (notes.chord)
