@@ -149,9 +149,9 @@ const notes = {
    chord: [ 0, 5, 7, 19 ],
    i: Math.floor (Math.random () * 4),
    next: () => {
-      notes.i += 1
-      notes.i %= notes.chord.length
-      return notes.chord[notes.i] + notes.root
+      this.i += 1
+      this.i %= this.chord.length
+      return this.chord[this.i] + this.root
    }
 }
 
