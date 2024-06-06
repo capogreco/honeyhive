@@ -155,7 +155,7 @@ const next = () => {
    return chord[i] + root
 }
 
-shuffle_array (notes.chord)
+shuffle_array (chord)
 
 function next_note () {
    const now = audio_context.currentTime
