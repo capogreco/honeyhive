@@ -147,8 +147,8 @@ amp.connect (rev_gate)
 
 
 const root = 77
-const chord = [ 0, 5, 7, 19 ]
-let i = Math.floor (Math.random () * 4)
+const chord = [ 0, 5, 7, 19, 29 ]
+let i = Math.floor (Math.random () * 5)
 const next = () => {
    i += 1
    i %= chord.length
