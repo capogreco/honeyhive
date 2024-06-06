@@ -160,7 +160,7 @@ shuffle_array (notes.chord)
 function next_note () {
    const now = audio_context.currentTime
 
-   const f = midi_to_cps (notes.next ())
+   const f = midi_to_cps (next ())
    osc.frequency.cancelScheduledValues (now)
    osc.frequency.setValueAtTime (osc.frequency.value, now)
    osc.frequency.exponentialRampToValueAtTime (f, now)
