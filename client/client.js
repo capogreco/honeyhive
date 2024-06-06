@@ -146,8 +146,8 @@ amp.connect (rev_gate)
 
 const notes = {
    root: 77,
-   chord: [ 0, 5, 7],
-   i: Math.floor (Math.random () * 3),
+   chord: [ 0, 5, 7, 19 ],
+   i: Math.floor (Math.random () * 4),
    next: () => {
       notes.i += 1
       notes.i %= notes.chord.length
